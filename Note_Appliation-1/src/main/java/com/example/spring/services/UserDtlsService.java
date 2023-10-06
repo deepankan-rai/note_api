@@ -14,9 +14,11 @@ public class UserDtlsService {
 	@Autowired
     private UserRepository userRepository;
 
-    public UserDtlsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    
+    public Optional<UserDtls> getUserById(int userId) {
+        return userRepository.findById(userId);
     }
+
 
     public UserDtls addUser(UserDtls user) {
   
